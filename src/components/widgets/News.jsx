@@ -36,8 +36,8 @@ const News = () => {
     return (<div className="">
         {newsData ? (
             <div className="flex flex-col">
-                {newsData.articles.slice(0, 3).map((article, index) => {
-                    return <a className="news" href={article.url}>{article.title}</a>
+                {newsData?.articles?.slice(0, 3).map((article, index) => {
+                    return <a key={index} className="news" href={article.url}>{article.title}</a>
                 })}
             </div>
         ) : (<p>Loading...</p>)}
