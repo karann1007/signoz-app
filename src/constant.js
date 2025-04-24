@@ -1,6 +1,6 @@
 export const STOCK_API_KEY = 'PRBH8Q81JYC3NYOU';
 export const WEATHER_API_KEY = 'f69e6cea43834031974141934252304';
-export const NEWS_API_KEY = '739b2147e02042dbb0de51d4f903b834';
+export const NEWS_API_KEY = 'pub_8280701e79a306f878b4125cfe4a7be79e8ad';
 
 export const initialWidgets = [
     { id: 'weather', type: 'weather', size: { width: 300, height: 200 } },

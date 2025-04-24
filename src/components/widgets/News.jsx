@@ -9,10 +9,10 @@ const News = () => {
 
     const fetchNewsData = async () => {
         try {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEY}`);
+            const response = await fetch(`https://newsdata.io/api/1/news?apikey=${NEWS_API_KEY}&q=india`);
             const data = await response.json();
-            setNewsData(data);
-            console.log("NEWSS", data);
+            setNewsData(data.results);
+            console.log("NEWSS", data.results);
         } catch (error) {
             setError(error);
         } finally {
@@ -36,8 +36,8 @@ const News = () => {
     return (<div className="">
         {newsData ? (
             <div className="flex flex-col">
-                {newsData?.articles?.slice(0, 3).map((article, index) => {
-                    return <a key={index} className="news" href={article.url}>{article.title}</a>
+                {newsData?.slice(0, 3).map((article, index) => {
+                    return <a key={index} className="news" href={article.source_url}>{article.title}</a>
                 })}
             </div>
         ) : (<p>Loading...</p>)}
