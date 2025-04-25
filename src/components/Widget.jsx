@@ -22,9 +22,9 @@ const Widget = ({ id, type, size, onResize, onRemove, widgetData, saveData }) =>
                 onResizeStop={(e, data) => onResize(id, { width: data.size.width, height: data.size.height })}
                 resizeHandles={['s', 'e', 'se']} minConstraints={[150, 100]}>
                 <div className="bg-white shadow-md rounded p-4 h-full w-full overflow-hidden" role="region" aria-labelledby={`widget-${id}-title`}>
+                    <button {...listeners} className="drag-handle cursor-move" title="Drag widget"></button>
                     <div className='flex flex-row justify-between m-5'>
                         <h3 id={`widget-${id}-title`} className="text-lg font-bold mb-2">{type.toUpperCase()}</h3>
-                        <button {...listeners} className="drag-handle cursor-move" title="Drag widget">⠿</button>
                         <button className='remove-button' onClick={() => onRemove(id)}>x</button>
                     </div>
                     {/* COULD BE DONE IN A BETTER WAY !! SWITCH-CASE MAYBE ? */}
